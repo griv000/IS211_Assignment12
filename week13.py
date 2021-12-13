@@ -49,10 +49,10 @@ def index():
 def login():
     error=None
     if request.method == 'POST':
-        if request.form['username'] != "admin":
+        if request.form['username'] != app.config['USERNAME']:
             error = 'Invalid username'
             session['logged_in'] = False
-        elif request.form['password'] != "password":
+        elif request.form['password'] != app.config['PASSWORD']:
             error = 'Invalid password'
             session['logged_in'] = False
         else:
