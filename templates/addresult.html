@@ -1,0 +1,32 @@
+<html>
+    <head><title>Add Student Quiz Result</title><h1>Add Student Quiz Result</h1></head>
+    <body style="background-color:lightgrey;">
+        
+        {% if error %}
+            <p><u><font color=red><strong>Error:</strong> {{ error }}</font></u></p>
+        {% endif %} 
+
+        <form action="/results/add" method="post">
+            <ul>
+                <li>Student Name: <select name="StudentID">
+                    <option>Select Student Name</option>
+                    {% for i in students %}
+                        <option value="{{ i[0] }}">{{ i[1] }} {{ i[2] }}</option>
+                    {% endfor %}
+                </select></li>
+
+                <li>Quiz Subject: <select name="QuizID">
+                    <option>Select Quiz</option>
+                    {% for x in quizzes%}
+                        <option value="{{ x[0] }}">{{ x[1] }}</option>
+                    {% endfor %}
+                </select></li>
+
+                <li>Quiz Score: <input type="number" name="QuizScore"></li>
+
+         </ul>
+            <input type="submit" value = "Add Quiz Result">
+        </form>
+        
+    </body>
+</html>

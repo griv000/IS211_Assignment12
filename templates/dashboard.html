@@ -1,0 +1,60 @@
+<html><head><title>Dashboard</title><h1>Dashboard</h1></head>
+
+<body style="background-color:lightgrey;">
+
+
+{% if error %}
+    <p><u><font color=red><strong>Error:</strong> {{ error }}</font></u></p>
+{% endif %}
+
+<p></p>
+
+<h1>Students Table</h1>
+<table border="1">
+    <tr>
+        <td>Student ID</td>
+        <td>Student First Name</td>
+        <td>Student Last Name</td>
+        <td>Student Quiz Results</td>
+    </tr>
+
+    {% for i in students %}
+    <tr>
+        <td>{{ i[0] }}</td>
+        <td>{{ i[1] }}</td>
+        <td>{{ i[2] }}</td>
+        <td><a href="/student/{{ i[0] }}">Quiz Results</a></td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+<p></p>
+<h1>Quizzes Table</h1>
+<table border="1">
+    <tr>
+        <td>Quiz ID</td>
+        <td>Quiz Subject</td>
+        <td># Questions</td>
+        <td>Quiz Date</td>
+    </tr>
+    
+    {% for x in quizzes %}
+    <tr>
+        <td>{{ x[0] }}</td>
+        <td>{{ x[1] }}</td>
+        <td>{{ x[2] }}</td>
+        <td>{{ x[3] }}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+<ul>
+    <lh><strong>Options</strong></lh>
+    <li><a href="/student/add">Add Student</a></li>
+    <li><a href="/quiz/add">Add Quiz</a></li>
+    <li><a href="/results/add">Add Quiz Results</a></li>
+</ul>
+
+</body></html>

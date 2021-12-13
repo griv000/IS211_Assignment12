@@ -1,0 +1,18 @@
+<html>
+    <head><title>Add Student</title><h1>Add Student</h1></head>
+    <body style="background-color:lightgrey;">
+        
+        {% if error %}
+            <p><u><font color=red><strong>Error:</strong> {{ error }}</font></u></p>
+        {% endif %} 
+
+        <form action="/student/add" method="post">
+            <ul>
+                <li>First Name: <input type="text" name="FirstName"></li>
+                <li>Last Name: <input type="text" name="LastName"></li>
+            </ul>
+            <input type="submit" value = "Add Student">
+        </form>
+        
+    </body>
+</html>

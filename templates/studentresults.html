@@ -1,0 +1,36 @@
+<html>
+<head>
+    <Title>Student Results</Title>
+    <H1>Student Results</H1>
+</head>
+<body style="background-color:lightgrey;">
+
+{% if error %}
+    <p><u><font color=red><strong>Error:</strong> {{ error }}</font></u></p>
+{% endif %}
+
+<table border=1>
+
+    <tr>
+        <td>Student ID</td>
+        <td>First Name</td>
+        <td>Last Name</td> 
+        <td>Quiz Subject</td>
+        <td>Quiz Date</td>
+        <td>Quiz Score</td>
+    </tr>
+
+{% for i in studentscores %}
+<tr>
+    <td>{{ i[0] }}</td>
+    <td>{{ i[1] }}</td>
+    <td>{{ i[2] }}</td> 
+    <td>{{ i[3] }}</td>
+    <td>{{ i[4] }}</td>
+    <td>{{ i[5] }}</td> 
+</tr>
+{% endfor %}
+
+</table>
+</body>
+</html>

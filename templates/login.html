@@ -1,0 +1,27 @@
+<html><head><title>Login Page</title></head>
+
+<body style="background-color:lightgrey;">
+<h1>Login Page</h1>
+
+{% if error %}
+    <p><u><font color=red><strong>Error:</strong> {{ error }}</font></u></p>
+{% endif %}
+
+
+
+
+<form action="/login" method="post">
+    <dl>
+        <dt>Username:
+        <dd><input type=text name=username>
+        <dt>Password:
+        <dd><input type=password name=password>
+        <dd><input type=submit value=Login>
+    </dl>
+
+</form>
+
+</body>
+
+
+</html>

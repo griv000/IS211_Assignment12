@@ -1,0 +1,19 @@
+<html>
+    <head><title>Add Quiz</title><h1>Add Quiz</h1></head>
+    <body style="background-color:lightgrey;">
+        
+        {% if error %}
+            <p><u><font color=red><strong>Error:</strong> {{ error }}</font></u></p>
+        {% endif %} 
+
+        <form action="/quiz/add" method="post">
+            <ul>
+                <li>Quiz Subject: <input type="text" name="QuizSubject"></li>
+                <li>Number Quiz Questions: <input type="number" name="QuizNumQues"></li>
+                <li>Quiz Date: <input type="date" name="QuizDate"></li>
+            </ul>
+            <input type="submit" value = "Add Student">
+        </form>
+        
+    </body>
+</html>
